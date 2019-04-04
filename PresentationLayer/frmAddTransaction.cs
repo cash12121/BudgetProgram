@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PresentationLayer
 {
-	public partial class Form1 : Form
+	public partial class frmAddTransaction : Form
 	{
-		public Form1()
+		public frmAddTransaction()
 		{
 			InitializeComponent();
+		}
+
+		private void label2_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

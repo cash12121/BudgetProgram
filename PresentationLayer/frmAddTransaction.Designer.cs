@@ -36,6 +36,7 @@
 			this.cmbTransactionType = new System.Windows.Forms.ComboBox();
 			this.cmbTransactionCatagory = new System.Windows.Forms.ComboBox();
 			this.numAmount = new System.Windows.Forms.NumericUpDown();
+			this.btnAddTransaction = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -56,7 +57,6 @@
 			this.label2.Size = new System.Drawing.Size(78, 32);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Type";
-			this.label2.Click += new System.EventHandler(this.label2_Click);
 			// 
 			// label3
 			// 
@@ -105,20 +105,25 @@
 			// numAmount
 			// 
 			this.numAmount.Location = new System.Drawing.Point(697, 522);
-			this.numAmount.Maximum = new decimal(new int[] {
-            -559939585,
-            902409669,
-            54,
-            0});
 			this.numAmount.Name = "numAmount";
 			this.numAmount.Size = new System.Drawing.Size(410, 38);
 			this.numAmount.TabIndex = 8;
+			// 
+			// btnAddTransaction
+			// 
+			this.btnAddTransaction.Location = new System.Drawing.Point(750, 725);
+			this.btnAddTransaction.Name = "btnAddTransaction";
+			this.btnAddTransaction.Size = new System.Drawing.Size(270, 132);
+			this.btnAddTransaction.TabIndex = 9;
+			this.btnAddTransaction.Text = "Add Transaction";
+			this.btnAddTransaction.UseVisualStyleBackColor = true;
 			// 
 			// frmAddTransaction
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1691, 975);
+			this.Controls.Add(this.btnAddTransaction);
 			this.Controls.Add(this.numAmount);
 			this.Controls.Add(this.cmbTransactionCatagory);
 			this.Controls.Add(this.cmbTransactionType);
@@ -145,5 +150,6 @@
 		private System.Windows.Forms.ComboBox cmbTransactionType;
 		private System.Windows.Forms.ComboBox cmbTransactionCatagory;
 		private System.Windows.Forms.NumericUpDown numAmount;
+		private System.Windows.Forms.Button btnAddTransaction;
 	}
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataObjects
 {
-    public class Class1
-    {
-    }
+	class TransactionList
+	{
+
+	}
 }

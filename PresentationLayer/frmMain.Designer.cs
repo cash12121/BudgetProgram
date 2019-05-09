@@ -35,13 +35,12 @@
 			this.lblExpenses = new System.Windows.Forms.Label();
 			this.lblTotal = new System.Windows.Forms.Label();
 			this.btnAddTransaction = new System.Windows.Forms.Button();
-			this.dgvTransactions = new System.Windows.Forms.DataGridView();
-			this.chName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.Catagory = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
+			this.lstTransactions = new System.Windows.Forms.ListView();
+			this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.btnEditTransaction = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -79,38 +78,41 @@
 			this.lblIncome.AutoSize = true;
 			this.lblIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblIncome.ForeColor = System.Drawing.Color.LimeGreen;
-			this.lblIncome.Location = new System.Drawing.Point(67, 65);
+			this.lblIncome.Location = new System.Drawing.Point(69, 65);
 			this.lblIncome.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
 			this.lblIncome.Name = "lblIncome";
 			this.lblIncome.Size = new System.Drawing.Size(97, 31);
 			this.lblIncome.TabIndex = 3;
 			this.lblIncome.Text = "$00.00";
+			this.lblIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lblExpenses
 			// 
 			this.lblExpenses.AutoSize = true;
 			this.lblExpenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblExpenses.ForeColor = System.Drawing.Color.Red;
-			this.lblExpenses.Location = new System.Drawing.Point(281, 65);
+			this.lblExpenses.Location = new System.Drawing.Point(278, 65);
 			this.lblExpenses.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
 			this.lblExpenses.Name = "lblExpenses";
 			this.lblExpenses.Size = new System.Drawing.Size(97, 31);
 			this.lblExpenses.TabIndex = 4;
 			this.lblExpenses.Text = "$00.00";
+			this.lblExpenses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lblTotal
 			// 
 			this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTotal.Location = new System.Drawing.Point(479, 65);
+			this.lblTotal.Location = new System.Drawing.Point(451, 64);
 			this.lblTotal.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
 			this.lblTotal.Name = "lblTotal";
 			this.lblTotal.Size = new System.Drawing.Size(148, 32);
 			this.lblTotal.TabIndex = 5;
 			this.lblTotal.Text = "$00.00";
+			this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// btnAddTransaction
 			// 
-			this.btnAddTransaction.Location = new System.Drawing.Point(246, 329);
+			this.btnAddTransaction.Location = new System.Drawing.Point(179, 325);
 			this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(1);
 			this.btnAddTransaction.Name = "btnAddTransaction";
 			this.btnAddTransaction.Size = new System.Drawing.Size(152, 52);
@@ -119,58 +121,51 @@
 			this.btnAddTransaction.UseVisualStyleBackColor = true;
 			this.btnAddTransaction.Click += new System.EventHandler(this.btnAddTransaction_Click);
 			// 
-			// dgvTransactions
+			// lstTransactions
 			// 
-			this.dgvTransactions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvTransactions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chName,
-            this.Date,
-            this.Type,
-            this.Catagory,
-            this.Amount});
-			this.dgvTransactions.Location = new System.Drawing.Point(12, 154);
-			this.dgvTransactions.Name = "dgvTransactions";
-			this.dgvTransactions.RowHeadersVisible = false;
-			this.dgvTransactions.RowTemplate.ReadOnly = true;
-			this.dgvTransactions.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.dgvTransactions.Size = new System.Drawing.Size(633, 150);
-			this.dgvTransactions.TabIndex = 8;
+			this.lstTransactions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colName,
+            this.colDate,
+            this.colType,
+            this.colAmount});
+			this.lstTransactions.FullRowSelect = true;
+			this.lstTransactions.GridLines = true;
+			this.lstTransactions.Location = new System.Drawing.Point(61, 134);
+			this.lstTransactions.Name = "lstTransactions";
+			this.lstTransactions.Size = new System.Drawing.Size(552, 169);
+			this.lstTransactions.TabIndex = 0;
+			this.lstTransactions.UseCompatibleStateImageBehavior = false;
+			this.lstTransactions.View = System.Windows.Forms.View.Details;
 			// 
-			// chName
+			// colName
 			// 
-			this.chName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.chName.HeaderText = "Name";
-			this.chName.Name = "chName";
-			this.chName.ReadOnly = true;
+			this.colName.Text = "Name";
+			this.colName.Width = 138;
 			// 
-			// Date
+			// colDate
 			// 
-			this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Date.HeaderText = "Date";
-			this.Date.Name = "Date";
-			this.Date.ReadOnly = true;
+			this.colDate.Text = "Date";
+			this.colDate.Width = 138;
 			// 
-			// Type
+			// colType
 			// 
-			this.Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Type.HeaderText = "Type";
-			this.Type.Name = "Type";
-			this.Type.ReadOnly = true;
+			this.colType.Text = "Type";
+			this.colType.Width = 138;
 			// 
-			// Catagory
+			// colAmount
 			// 
-			this.Catagory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Catagory.HeaderText = "Catagory";
-			this.Catagory.Name = "Catagory";
-			this.Catagory.ReadOnly = true;
+			this.colAmount.Text = "Amount";
+			this.colAmount.Width = 138;
 			// 
-			// Amount
+			// btnEditTransaction
 			// 
-			this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Amount.HeaderText = "Amount";
-			this.Amount.Name = "Amount";
-			this.Amount.ReadOnly = true;
+			this.btnEditTransaction.Location = new System.Drawing.Point(344, 325);
+			this.btnEditTransaction.Name = "btnEditTransaction";
+			this.btnEditTransaction.Size = new System.Drawing.Size(152, 52);
+			this.btnEditTransaction.TabIndex = 8;
+			this.btnEditTransaction.Text = "Edit Transaction";
+			this.btnEditTransaction.UseVisualStyleBackColor = true;
+			this.btnEditTransaction.Click += new System.EventHandler(this.BtnEditTransaction_Click);
 			// 
 			// frmMain
 			// 
@@ -178,7 +173,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(657, 408);
-			this.Controls.Add(this.dgvTransactions);
+			this.Controls.Add(this.btnEditTransaction);
+			this.Controls.Add(this.lstTransactions);
 			this.Controls.Add(this.btnAddTransaction);
 			this.Controls.Add(this.lblTotal);
 			this.Controls.Add(this.lblExpenses);
@@ -191,7 +187,6 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Overview";
 			this.Load += new System.EventHandler(this.frmMain_Load);
-			((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -206,12 +201,12 @@
 		private System.Windows.Forms.Label lblTotal;
 		private System.Windows.Forms.Label lblIncome;
 		private System.Windows.Forms.Button btnAddTransaction;
-		private System.Windows.Forms.DataGridView dgvTransactions;
-		private System.Windows.Forms.DataGridViewTextBoxColumn chName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-		private System.Windows.Forms.DataGridViewComboBoxColumn Type;
-		private System.Windows.Forms.DataGridViewComboBoxColumn Catagory;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+		private System.Windows.Forms.ListView lstTransactions;
+		private System.Windows.Forms.ColumnHeader colName;
+		private System.Windows.Forms.ColumnHeader colDate;
+		private System.Windows.Forms.ColumnHeader colType;
+		private System.Windows.Forms.ColumnHeader colAmount;
+		private System.Windows.Forms.Button btnEditTransaction;
 	}
 }
 

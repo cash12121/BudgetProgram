@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataObjects;
 
 namespace PresentationLayer
 {
@@ -14,6 +15,7 @@ namespace PresentationLayer
 		[STAThread]
 		static void Main()
 		{
+			AppData.DataPath = Application.StartupPath + @"\" + "TransactionData";
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new frmMain());

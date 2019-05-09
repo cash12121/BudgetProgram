@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataObjects
 {
-	class TransactionList
+	public class AppData
 	{
-
+		public static string DataPath { get; set; }
+		public static string TransactionListName = "TransactionData.csv";
 	}
 }

@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddTransaction.cs">
+    <Compile Include="frmAddEditTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddTransaction.Designer.cs">
-      <DependentUpon>frmAddTransaction.cs</DependentUpon>
+    <Compile Include="frmAddEditTransaction.Designer.cs">
+      <DependentUpon>frmAddEditTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -60,8 +60,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAddTransaction.resx">
-      <DependentUpon>frmAddTransaction.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddEditTransaction.resx">
+      <DependentUpon>frmAddEditTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -87,6 +87,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataObjects\DataObjects.csproj">
+      <Project>{93af5907-1410-4ff7-af2a-9a5e4a598129}</Project>
+      <Name>DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj">
+      <Project>{d43b0b1e-73b1-4764-b304-40b2a54d7ba1}</Project>
+      <Name>LogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
